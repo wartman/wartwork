@@ -1,0 +1,13 @@
+---
+title: About
+description: About Peter Wartman, who draws things.
+---
+![Me](/assets/images/about-me.jpg)
+
+Peter Wartman has been drawing monsters, robots and spaceships since he figured out how to hold a pencil.
+
+He lives in Minneapolis, Minnesota, where he works as a designer by day and a comic artist the rest of the time.
+
+Comics and more art can be found at [Shipwreck Planet](url=http://www.shipwreckplanet.com] or on [Tumblr](url=http://shipwreck-planet.tumblr.com).
+
+[Download resume](url=http://www.wartfolio.com/files/resume_2013.pdf)
