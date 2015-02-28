@@ -1,20 +1,17 @@
 var dotenv = require('dotenv')
-var Rabbit = require('rabbit')
+var Cargo = require('Cargo')
 
 // Setup env
 dotenv.load()
 
-// Run the rabbit app
-Rabbit({
+// Run the Cargo app
+Cargo({
 
-  // MODULE ROOT IS BROKEN INVESTIGATE
-  'module root': __dirname,
-
-  'record path': 'data',
+  'manifest path': 'data',
   'static path': 'public',
 
-  'views': 'routes/templates',
-  'models': require('./models'), // @todo: autoloader
-  'routes': require('./routes') // @todo: autoloader
+  'views': 'app/routes/templates',
+  'models': 'app/models',
+  'routes': 'app/routes'
 
 }).run()
