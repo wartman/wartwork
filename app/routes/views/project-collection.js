@@ -1,4 +1,4 @@
-var Cargo = require('Cargo')
+var Cargo = require('cargo')
 
 module.exports = function (req, res) {
   req.collections.projects().fetch().then(function (projects) {

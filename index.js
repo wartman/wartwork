@@ -1,5 +1,5 @@
 var dotenv = require('dotenv')
-var Cargo = require('Cargo')
+var Cargo = require('cargo')
 
 // Setup env
 dotenv.load()
@@ -9,6 +9,7 @@ Cargo({
 
   'manifest path': 'data',
   'static path': 'public',
+  'port': process.env.PORT,
 
   'views': 'app/routes/templates',
   'models': 'app/models',

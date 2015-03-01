@@ -3,22 +3,38 @@
 <html>
   
   <head>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
   </head>
 
   <body>
       
     <header class="navbar">
-      <h1><a href="/">Peter Wartman</a></h1>
-      <ul class="menu">
+
+      <div class="navbar-branding">
+        <a href="/">
+          <span class="navbar-branding-logo">
+            PW
+          </span>
+        </a>
+        <hgroup class="navbar-branding-title">
+          <h1>Peter Wartman</h1>
+          <h2>Illustration</h2>
+        </hgroup>
+      </div>
+
+      <ul class="menu navbar-menu">
         <li class="option option-inline"><a href="/projects">Projects</a>
         <li class="option option-inline"><a href="/page/about">About</a>
         <li class="option option-inline"><a href="/page/contact">Contact</a>
       </ul>
+
     </header>
 
     <div class="content">
       {% block content %}{% endblock %}
     </div>
+
+    <script src="/scripts/main.js"></script>
 
   </body>
 

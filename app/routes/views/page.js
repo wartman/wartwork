@@ -1,4 +1,4 @@
-var Cargo = require('Cargo')
+var Cargo = require('cargo')
 
 // Views for a single page.
 module.exports = function (req, res) {

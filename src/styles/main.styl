@@ -1,0 +1,57 @@
+@require './util'
+@require './config'
+@require './core'
+@require './ui'
+
+// Main
+// ====
+
+// Navbar
+// ------
+.navbar {
+  overflow: hidden
+  width: 100%
+  background: #ffffff
+  z-index: 3
+  width: 100%
+  position: relative
+  padding: 20px 0 20px 20px
+
+  .navbar-branding {
+    float: left
+    width: 250px
+  
+    .navbar-branding-logo {
+      -standalone()
+      background: transparent url('images/logo.svg') 0 0
+      height: 60px
+      width: 60px
+      float: left
+    }
+      
+    .navbar-branding-title {
+      float: left
+      margin: 15px 0 15px 20px
+      
+      h1, h2 {
+        margin: 0
+      }
+    }
+
+  }
+  
+  .navbar-menu {
+    padding: 15px 10px 15px 0
+    height: 60px
+    
+    .option {
+      height: 30px
+     
+      a {
+        -button()
+      }
+    }
+    
+  }
+
+}

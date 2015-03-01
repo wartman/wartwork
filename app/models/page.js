@@ -1,4 +1,4 @@
-var Cargo = require('Cargo')
+var Cargo = require('cargo')
 
 var Page = Cargo.Manifest.Document.extend({
 
