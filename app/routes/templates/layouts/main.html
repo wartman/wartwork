@@ -8,27 +8,47 @@
 
   <body>
       
-    <header class="navbar">
+    <div class="sidebar">
 
-      <div class="navbar-branding">
+      <div class="sidebar-branding">
         <a href="/">
-          <span class="navbar-branding-logo">
+          <span class="sidebar-branding-logo">
             PW
           </span>
         </a>
-        <hgroup class="navbar-branding-title">
+        <hgroup class="sidebar-branding-title">
           <h1>Peter Wartman</h1>
           <h2>Illustration</h2>
         </hgroup>
       </div>
 
-      <ul class="menu navbar-menu">
-        <li class="option option-inline"><a href="/projects">Projects</a>
-        <li class="option option-inline"><a href="/page/about">About</a>
-        <li class="option option-inline"><a href="/page/contact">Contact</a>
+      <ul class="menu sidebar-menu">
+        <li class="option option-inline">
+          <a {% if site.currentSection == '/' %} class="is-selected" {% endif %} href="/">Projects</a>
+        </li>
+        <li class="option option-inline">
+          <a {% if site.currentSection == '/page/about' %} class="is-selected" {% endif %} href="/page/about">About</a>
+        </li>
+        <li class="option option-inline">
+          <a {% if site.currentSection == '/page/contact' %} class="is-selected" {% endif %} href="/page/contact">Contact</a>
+        </li>
       </ul>
 
-    </header>
+      <div class="sidebar-section sidebar-section--projects">
+        {% if projects %}
+          <ul class="grid">
+            {% for project in projects %}
+              <li class="grid-item">
+                <a href="/projects/{{project.slug}}">
+                  <img src="/media/{{project.thumbnail}}" alt="{{project.title}}">
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+    </div>
 
     <div class="content">
       {% block content %}{% endblock %}

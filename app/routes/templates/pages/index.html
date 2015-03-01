@@ -1,5 +1,7 @@
 {% extends '../layouts/main.html' %}
 
 {% block content %}
-  <a href="project">Projects</a>
+  {# TODO: Make this a bit cleaner. Set `project` in the view? #}
+  {% set project = projects[0] %}
+  {% include '../projects/partials/project.html' with project %}
 {% endblock %}

@@ -2,21 +2,51 @@
 
 // UI
 // ==
+// TODO: Rework this to be nicer.
 
 // Buttons
 // -------
--button(bg=config.colors.primary, color=config.colors.offset) {
-  border-radius: 3px
-  background-color: bg
-  color: color
+-button(primary=config.colors.offset, offset=config.colors.primary) {
+  border-radius: 5px
+  border-width: 2px
+  border-color: primary
+  border-style: solid
+  background-color: transparent
+  color: primary
   height: 30px
-  line-height: 30px
+  line-height: 25px
   font-weight: 600
   text-decoration: none
   height: 30px
-  padding: 0 10px
+  padding: 0 8px
   margin: 0 10px 0 0
   float: left
   display: block
+  
+  &:hover, &.is-selected {
+    background-color: primary
+    color: offset
+  }
 }
 
+-button-group(buttonName='.button', primary=config.colors.offset, offset=config.colors.primary) {
+  
+  border-radius: 5px
+  border-width: 2px
+  border-color: primary
+  border-style: solid
+  height: 30px
+  line-height: 25px
+  overflow: hidden
+
+  {buttonName} {
+    -button(primary, offset)
+    border-width: 0 2px 0 0
+    border-radius: 0
+    margin: 0
+    // &:last-child {
+    //   border-width: 0
+    // }
+  }
+
+}

@@ -1,0 +1,13 @@
+<div class="project">
+  <header class="project-title">
+    <h2>{{project.title}}</h2>
+  </header>
+
+  <div class="project-attachment">
+    <img src="/media/{{project.attachment}}">
+  </div>
+  
+  <div class="project-content">
+    {{project.body|safe}}
+  </div>
+</div>

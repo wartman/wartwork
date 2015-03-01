@@ -1,17 +1,5 @@
 {% extends '../layouts/main.html' %}
 
 {% block content %}
-  <div class="project">
-    <header class="project-title">
-      <h2>{{project.title}}</h2>
-    </header>
-
-    <div class="project-attachment">
-      <img src="/media/{{project.attachment}}">
-    </div>
-    
-    <div class="content">
-      {{project.body|safe}}
-    </div>
-  </div>
+  {% include './partials/project.html' %}
 {% endblock %}

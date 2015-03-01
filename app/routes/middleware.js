@@ -19,3 +19,14 @@ exports.scripts = function () {
     transform: [babelify]
   })
 }
+
+exports.siteVars = function (req, res, next) {
+  res.locals.site = {
+    currentSection: req.url
+  }
+  // Always need all projects
+  req.collections.projects().fetch().then(function (projects) {
+    res.locals.projects = projects.toJSON()
+    next()
+  }).catch(next)
+}
