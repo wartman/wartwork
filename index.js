@@ -7,6 +7,8 @@ dotenv.load()
 // Run the Cargo app
 Cargo({
 
+  'module root': __dirname,
+
   'manifest path': 'data',
   'static path': 'public',
   'port': process.env.PORT,

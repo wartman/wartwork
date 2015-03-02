@@ -1,8 +1,8 @@
 exports.single = function (req, res) {
-  req.documents.project(req.params).fetch().then(function (project) {
+  req.documents.page(req.params).fetch().then(function (page) {
     res.json({
       ok: true,
-      project: project.toJSON()
+      page: page.toJSON()
     })
   }).catch(function (err) {
     res.json({
@@ -14,10 +14,10 @@ exports.single = function (req, res) {
 }
 
 exports.collection = function (req, res) {
-  req.collections.projects().fetch().then(function (projects) {
+  req.collections.pages().fetch().then(function (pages) {
     res.json({
       ok: true,
-      projects: projects.toJSON()
+      pages: pages.toJSON()
     })
   }).catch(function (err) {
     res.json({

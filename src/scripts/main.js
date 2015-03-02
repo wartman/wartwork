@@ -1,9 +1,14 @@
-import Header from './views/header'
+import Sidebar from './views/sidebar'
+import Projects from './models/projects'
 
 class App {
 
   constructor() {
-    console.log('hey')
+    this.projects =  new Projects()
+    this.sidebar = new Sidebar({
+      el: '#primary-sidebar',
+      collection: this.projects
+    })
   }
 
 }
