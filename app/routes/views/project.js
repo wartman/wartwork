@@ -4,6 +4,7 @@ var Cargo = require('cargo')
 module.exports = function (req, res) {
   req.documents.project(req.params).fetch().then(function (project) {
     // @todo use res.local?
+    console.log(project.attributes)
     res.render('projects/single', {
       project: project.toJSON()
     })

@@ -1,6 +1,7 @@
 var browserify = require('browserify-middleware')
 var babelify = require('babelify')
 var stylus = require('stylus')
+var Promise = require('bluebird')
 
 exports.css = function () {
   return stylus.middleware({
@@ -24,9 +25,16 @@ exports.siteVars = function (req, res, next) {
   res.locals.site = {
     currentSection: req.url
   }
-  // Always need all projects
-  req.collections.projects().fetch().then(function (projects) {
-    res.locals.projects = projects.toJSON()
+  Promise.all([
+    req.collections.projects().fetch(),
+    req.collections.pages().query({
+      tag: 'sidebar',
+      $limit: 2
+    }).fetch()
+  ]).then(function (results) {
+    res.projects = results[0] // so we don't need to load again.
+    res.locals.projects = results[0].toJSON()
+    res.locals.sidebarPages = results[1].toJSON()
     next()
   }).catch(next)
 }

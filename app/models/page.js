@@ -4,7 +4,7 @@ var Page = Cargo.Manifest.Document.extend({
 
   init: function () {
     this.path = 'pages'
-    this.$map = {id:0, page:1}
+    this.$map = {id:0, slug:1, tag:2}
   }
 
 })

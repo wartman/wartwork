@@ -24,14 +24,17 @@
 
       <ul class="menu sidebar-menu">
         <li class="option option-inline">
-          <a class="option-projects{% if site.currentSection == '/' %} is-selected{% endif %}" href="/">Projects</a>
+          <a class="option-toggle is-selected" data-tab="projects" href="/">Projects</a>
         </li>
-        <li class="option option-inline">
-          <a class="option-about{% if site.currentSection == '/page/about' %} is-selected{% endif %}" href="/page/about">About</a>
-        </li>
-        <li class="option option-inline">
-          <a  class="option-contact{% if site.currentSection == '/page/contact' %} is-selected{% endif %}" href="/page/contact">Contact</a>
-        </li>
+        {% for page in sidebarPages %}
+          <li class="option option-inline">
+            <a class="option-toggle" 
+              data-tab="{{page.slug}}" 
+              href="/page/{{page.slug}}">
+              {{ page.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
 
       <div class="sidebar-sections">
@@ -50,14 +53,11 @@
           {% endif %}
         </div>
 
-        <div class="sidebar-section sidebar-section--about" style="display:none":>
-          About
-        </div>
-
-        <div class="sidebar-section sidebar-section--contact" style="display:none">
-          Contact
-        </div>
-
+        {% for page in sidebarPages %}
+          <div class="sidebar-section sidebar-section--{{page.slug}}" style="display:none">
+            {{page.body|safe}}
+          </div>
+        {% endfor %}
       </div>
 
     </div>

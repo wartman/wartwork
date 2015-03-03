@@ -15,7 +15,7 @@ module.exports = function (app) {
   app.use(middleware.siteVars)
 
   app.get('/', routes.views.home)
-  app.get('/page/:page', routes.views.page)
+  app.get('/page/:slug', routes.views.page)
   app.get('/projects', routes.views.projectCollection)
   app.get('/projects/:slug', routes.views.project)
 
